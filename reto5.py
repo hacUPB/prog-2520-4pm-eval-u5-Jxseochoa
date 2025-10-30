@@ -3,7 +3,7 @@ import csv
 import math
 import matplotlib.pyplot as plt
 
-# ============== MENÚ PRINCIPAL ==============
+# MENÚ PRINCIPAL 
 
 def mostrar_menu_principal():
     print("=== MENÚ PRINCIPAL ===")
@@ -188,7 +188,6 @@ def lista_a_float_columna(datos, col):
     return valores
 
 def burbuja_ordenar(lista_nums):
-    # Ordenamiento burbuja in-place
     n = len(lista_nums)
     k = 0
     while k < n - 1:
@@ -202,7 +201,6 @@ def burbuja_ordenar(lista_nums):
         k += 1
 
 def estadisticas_basicas(valores):
-    # n
     n = 0
     i = 0
     while i < len(valores):
@@ -212,7 +210,6 @@ def estadisticas_basicas(valores):
     if n == 0:
         return n, 0.0, 0.0, 0.0, 0.0
 
-    # promedio
     suma = 0.0
     i = 0
     while i < n:
@@ -220,7 +217,6 @@ def estadisticas_basicas(valores):
         i += 1
     promedio = suma / n
 
-    # min y max
     minimo = valores[0]
     maximo = valores[0]
     i = 1
@@ -231,7 +227,6 @@ def estadisticas_basicas(valores):
             maximo = valores[i]
         i += 1
 
-    # mediana
     copia = []
     i = 0
     while i < n:
@@ -243,7 +238,6 @@ def estadisticas_basicas(valores):
     else:
         mediana = (copia[n // 2 - 1] + copia[n // 2]) / 2.0
 
-    # desviación estándar poblacional
     suma_dif = 0.0
     i = 0
     while i < n:
@@ -277,7 +271,6 @@ def calcular_estadisticas(datos):
         return
 
     res = estadisticas_basicas(valores)
-    # res: n, promedio, mediana, desv, minimo, maximo
     print("n:", res[0])
     print("Promedio:", res[1])
     print("Mediana:", res[2])
@@ -310,7 +303,6 @@ def grafico_barras_categorias(datos, col):
         else:
             clave = ""
 
-        # buscar categoría
         pos = -1
         j = 0
         while j < len(categorias):
